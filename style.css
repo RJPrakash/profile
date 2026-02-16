@@ -1,0 +1,141 @@
+/* style.css - All styling rules */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Space between menu and cart */
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#menu-list, #cart-section {
+    flex: 1; /* Allow flex items to grow */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+
+h1, h2 {
+    color: #333;
+    border-bottom: 2px solid #e63946; /* Accent color */
+    padding-bottom: 5px;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 15px;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    gap: 15px; /* Space between details and button */
+}
+
+.menu-item-details {
+   flex-grow: 1; /* Allow details to take up available space */
+}
+
+.menu-item span {
+    font-weight: bold;
+}
+
+.menu-item .price {
+    color: #008000; /* Green for price */
+    font-weight: bold;
+    margin-top: 5px;
+    display: block; /* Ensure price is on its own line if needed */
+}
+
+.add-to-cart-form {
+    margin: 0; /* Remove default form margin */
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.add-to-cart-button, .clear-cart-button {
+    background-color: #e63946; /* Accent color */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevent button text wrapping */
+}
+
+.add-to-cart-button:hover, .clear-cart-button:hover {
+    background-color: #d62839; /* Darker shade on hover */
+}
+
+#cart-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#cart-list li {
+    border-bottom: 1px dashed #eee;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* Space between details and price */
+}
+#cart-list li:last-child {
+     border-bottom: none;
+}
+
+.cart-item-details {
+    flex-grow: 1; /* Take available space */
+}
+
+ .cart-item-price {
+     min-width: 70px; /* Align prices nicely */
+     text-align: right;
+     font-weight: bold;
+     flex-shrink: 0; /* Prevent price from shrinking */
+ }
+
+#cart-total {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    border-top: 2px solid #333;
+    padding-top: 10px;
+}
+
+.empty-cart {
+    color: #777;
+    font-style: italic;
+}
+
+.clear-cart-button {
+    margin-top: 15px; /* Add space above clear button */
+}
+
+/* Responsive basic adjustments */
+@media (max-width: 700px) { /* Adjust breakpoint if needed */
+    body {
+        flex-direction: column; /* Stack menu and cart vertically */
+    }
+    #menu-list, #cart-section {
+       min-width: unset; /* Remove min-width */
+       width: 100%; /* Take full width when stacked */
+    }
+}
